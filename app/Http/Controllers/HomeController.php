@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactReceived;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class HomeController extends Controller
 {
@@ -24,6 +26,16 @@ class HomeController extends Controller
         !session('mensajes') ? $mensajes = [] : $mensajes = session('mensajes');
 
         return view('mensajes', ['mensajes' => $mensajes ]);
+
+    }
+    public function nuevoContacto(Request $request)
+    {
+        $nuevoContacto = $request->except('_token');
+
+        Mail::to('admin@admin.com')->send(new ContactReceived($nuevoContacto));
+
+        dd($nuevoContacto);
+
 
     }
 }

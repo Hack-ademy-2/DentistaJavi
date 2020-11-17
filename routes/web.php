@@ -23,4 +23,6 @@ Route::get('/team', [HomeController::class, 'team'])->name('team');
 
 Route::get('/mensajes', [HomeController::class, 'mensajes'])->name('mensajes');
 
+Route::post('/admin-email', [HomeController::class, 'nuevoContacto'])->name('nuevoContacto');
+
 Route::post('/mensaje', MensajesController::class)->name('mensaje');
