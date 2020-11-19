@@ -8,7 +8,7 @@
             <h1 class="p-2">Contacta con nosotros</h1>
             <div class="form-group">
                 <label for="nameContact">Nombre</label>
-                <input type="text" name="nameContac" class="form-control" id="nameContact">
+                <input type="text" name="nameContact" class="form-control" id="nameContact">
               </div>
             <div class="form-group">
               <label for="mailContact">Correo</label>
@@ -21,4 +21,24 @@
             <button type="submit" class="btn bgc-primary text-white">Enviar</button>
           </form>
 </div>
+<div class="container-fluid bg-contact p-5">   
+  <form method="POST" action="{{route('clients')}}" class="bg-white col-lg-4 px-2 py-5">
+    @csrf
+    <h1 class="p-2">Crear Ficha de Cliente</h1>
+    <div class="form-group">
+      <label for="name">Nombre</label>
+      <input type="text" name="name" class="form-control" id="name">
+    </div>
+    <button type="submit" class="btn bgc-primary text-white">Enviar</button>
+    </form>
+</div>
 @endsection
+
+
+
+
+
+
+<div class="">
+  
+</div>
